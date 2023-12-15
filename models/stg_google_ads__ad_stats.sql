@@ -57,4 +57,4 @@ final as (
     from fields
 )
 
-select * from final
+select * from final where DATE(date_day) >= DATE_ADD(CURRENT_DATE(), INTERVAL -2 YEAR)
