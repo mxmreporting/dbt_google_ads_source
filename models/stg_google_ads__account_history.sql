@@ -1,7 +1,7 @@
 {{ config(enabled=var('ad_reporting__google_ads_enabled', True),
     partition_by={
       "field": "updated_at", 
-      "data_type": "date",
+      "data_type": "TIMESTAMP",
       "granularity": "day"
     }
     ) }}
