@@ -49,4 +49,4 @@ final as (
 
 select *
 from final
-where  DATE(date_day) BETWEEN DATE_SUB(CURRENT_DATE(), INTERVAL 24 MONTH) AND CURRENT_DATE() 
+where DATE(date_day) >= DATE_ADD(CURRENT_DATE(), INTERVAL -2 YEAR);
