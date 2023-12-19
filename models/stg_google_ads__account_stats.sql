@@ -1,5 +1,5 @@
 {{ config(enabled=var('ad_reporting__google_ads_enabled', True),
-     unique_key = ['source_relation','account_id','date_day'],
+     unique_key = ['source_relation','account_id','device','ad_network_type','date_day'],
      partition_by={
       "field": "date_day", 
       "data_type": "date",
