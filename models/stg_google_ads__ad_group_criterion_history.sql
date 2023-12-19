@@ -1,4 +1,5 @@
 {{ config(enabled=var('ad_reporting__google_ads_enabled', True),
+     unique_key = ['source_relation','criterion_id','ad_group_id','updated_at'],
      partition_by={
       "field": "updated_at", 
       "data_type": "TIMESTAMP",
