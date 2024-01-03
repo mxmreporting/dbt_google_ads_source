@@ -36,7 +36,7 @@ final as (
     select
         source_relation, 
         customer_id as account_id, 
-        date as date_day,
+        DATE(TIMESTAMP(date, "America/New_York")) AS date_day,
         ad_network_type,
         device,
         clicks, 
