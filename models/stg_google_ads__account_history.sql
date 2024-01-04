@@ -38,7 +38,7 @@ final as (
     select
         source_relation, 
         id as account_id,
-        updated_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", updated_at, "America/New_York") AS TIMESTAMP) as updated_at,        --EST timezone conversion
         currency_code,
         auto_tagging_enabled,
         time_zone,
