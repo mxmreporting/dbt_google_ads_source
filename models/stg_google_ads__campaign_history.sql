@@ -38,13 +38,13 @@ final as (
     select
         source_relation, 
         id as campaign_id, 
-        updated_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", updated_at, "America/New_York") AS TIMESTAMP) as updated_at,        --EST timezone conversion
         name as campaign_name,
         customer_id as account_id,
         advertising_channel_type,
         advertising_channel_subtype,
-        start_date,
-        end_date,
+        DATE(TIMESTAMP(start_date, "America/New_York")) AS start_date,          --EST timezone conversion
+        DATE(TIMESTAMP(end_date, "America/New_York")) AS end_date,               --EST timezone conversion
         serving_status,
         status,
         tracking_url_template,
