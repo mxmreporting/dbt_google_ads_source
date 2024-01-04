@@ -38,7 +38,7 @@ final as (
         id as criterion_id,
         cast(ad_group_id as {{ dbt.type_string() }}) as ad_group_id,
         base_campaign_id,
-        updated_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", updated_at, "America/New_York") AS TIMESTAMP) as updated_at,        --EST timezone conversion
         type,
         status,
         keyword_match_type,
