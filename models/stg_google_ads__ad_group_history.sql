@@ -38,7 +38,7 @@ final as (
     select
         source_relation, 
         cast(id as {{ dbt.type_string() }}) as ad_group_id,
-        updated_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", updated_at, "America/New_York") AS TIMESTAMP) as updated_at,        --EST timezone conversion
         type as ad_group_type, 
         campaign_id, 
         campaign_name, 
