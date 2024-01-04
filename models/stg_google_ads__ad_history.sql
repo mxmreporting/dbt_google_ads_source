@@ -39,7 +39,7 @@ final as (
         cast(ad_group_id as {{ dbt.type_string() }}) as ad_group_id, 
         id as ad_id,
         name as ad_name,
-        updated_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", updated_at, "America/New_York") AS TIMESTAMP) as updated_at,        --EST timezone conversion
         type as ad_type,
         status as ad_status,
         display_url,
