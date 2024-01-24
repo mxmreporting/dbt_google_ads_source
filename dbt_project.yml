@@ -20,7 +20,7 @@ vars:
   google_ads__account_stats_passthrough_metrics: []
 models:
   google_ads_source:
-    +schema: google_ads_source
+    +schema: google_ads_stg_dev
     +materialized: table
     tmp:
       +materialized: view
