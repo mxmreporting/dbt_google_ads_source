@@ -38,7 +38,7 @@ final as (
     select
         source_relation, 
         customer_id as account_id, 
-        DATE(TIMESTAMP(date, "America/New_York")) AS date_day,     --EST timezone conversion
+       date as date_day,
         {% if target.type in ('spark','databricks') %}
         coalesce(cast(ad_group_id as {{ dbt.type_string() }}), split(ad_group,'adGroups/')[1]) as ad_group_id,
         {% else %}
