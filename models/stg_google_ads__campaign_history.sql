@@ -43,8 +43,8 @@ final as (
         customer_id as account_id,
         advertising_channel_type,
         advertising_channel_subtype,
-        DATE(TIMESTAMP(start_date, "America/New_York")) AS start_date,          --EST timezone conversion
-        DATE(TIMESTAMP(end_date, "America/New_York")) AS end_date,               --EST timezone conversion
+        start_date,      
+        end_date,               --EST timezone conversion
         serving_status,
         status,
         tracking_url_template,
